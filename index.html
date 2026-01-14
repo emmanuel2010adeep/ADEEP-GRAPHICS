@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adeep Graphics</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --gold:#facc15;
+      --dark:#070707;
+      --glass:rgba(255,255,255,.08);
+      --border:rgba(250,204,21,.35);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+    body{
+      background:linear-gradient(120deg,#050505,#0d0d0d,#050505,#111);
+      background-size:400% 400%;
+      animation:bgMove 16s ease infinite;
+      color:#fff;
+      overflow-x:hidden
+    }
+    }
+
+    @keyframes bgMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    section{padding:110px 8%}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden
+    }
+
+    .blob{
+      position:absolute;
+      width:500px;height:500px;
+      background:radial-gradient(circle,rgba(250,204,21,.35),transparent 70%);
+      filter:blur(70px);
+      animation:float 14s infinite alternate
+    }
+    .blob.one{top:10%;left:10%}
+    .blob.two{bottom:10%;right:10%;animation-delay:4s}
+
+    @keyframes float{to{transform:translateY(-80px)}}
+
+    .hero h1{
+      font-size:clamp(3.2rem,7vw,5.2rem);
+      font-weight:800;
+      letter-spacing:1px
+    }
+
+    .hero .adeep{color:var(--gold)}
+    .hero .graphics{
+      background:linear-gradient(90deg,#facc15,#fde047,#facc15);
+      -webkit-background-clip:text;
+      color:transparent
+    }
+
+    .hero p{
+      margin-top:18px;
+      font-size:1.15rem;
+      opacity:.8
+    }
+
+    .services-label{
+      margin-top:28px;
+      font-size:1.6rem;
+      font-weight:700;
+      color:var(--gold);
+      position:relative;
+      display:inline-block
+    }
+
+    .services-label::after{
+      content:"";
+      position:absolute;
+      left:0;bottom:-8px;
+      width:100%;height:4px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
+      animation:glow 2s infinite
+    }
+
+    @keyframes glow{50%{opacity:1}0%,100%{opacity:.4}}
+
+    /* GLASS CARDS */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:32px
+    }
+
+    .card{
+      background:var(--glass);
+      backdrop-filter:blur(18px);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:38px;
+      text-align:center;
+      opacity:0;
+      transform:translateY(40px);
+      transition:.8s ease;
+      position:relative;
+      overflow:hidden
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:linear-gradient(120deg,transparent,rgba(250,204,21,.5),transparent);
+      opacity:0;
+      transition:.5s ease
+    }
+
+    .card:hover::before{opacity:1}
+    .card:hover{transform:translateY(-6px) scale(1.02)
+    }
+
+    .card.show{opacity:1;transform:none}
+
+    .card h3{color:var(--gold);font-size:1.25rem}
+    .price{font-size:2rem;font-weight:800;margin-top:14px}
+
+    /* CONTACT */
+    .contact-card{
+      max-width:520px;
+      margin:0 auto;
+      background:var(--glass);
+      backdrop-filter:blur(20px);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:50px;
+      text-align:center
+    }
+
+    .contact-card h2{
+      font-size:2.2rem;
+      color:var(--gold);
+      margin-bottom:24px
+    }
+
+    .contact-item{
+      font-size:1.2rem;
+      margin:14px 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px
+    }
+
+    .contact-item img{width:26px;height:26px}
+
+    /* WHATSAPP */
+    .whatsapp-btn{
+      position:fixed;
+      bottom:26px;right:26px;
+      background:linear-gradient(135deg,#25D366,#1ebe57);
+      color:#fff;
+      padding:16px 32px;
+      border-radius:999px;
+      font-size:17px;
+      font-weight:600;
+      text-decoration:none;
+      box-shadow:0 15px 40px rgba(37,211,102,.45);
+      opacity:0;
+      transform:translateY(30px);
+      transition:.6s ease;
+      z-index:9999
+    }
+    .whatsapp-btn.show{opacity:1;transform:none}
+
+    @media(max-width:600px){section{padding:90px 6%}}
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <span class="blob one"></span>
+  <span class="blob two"></span>
+
+  <div>
+    <h1><span class="adeep">Adeep</span> <span class="graphics">Graphics</span></h1>
+    <p>YouTuber • Graphic Designer • Video Editor</p>
+    <div class="services-label">Services Offered</div>
+  </div>
+</section>
+
+<section>
+  <div class="cards">
+    <div class="card"><h3>Social Media Post</h3><p>Instagram & Facebook</p><div class="price">₹179</div></div>
+    <div class="card"><h3>Poster Design</h3><p>Events & promotions</p><div class="price">₹349</div></div>
+    <div class="card"><h3>Resume / CV</h3><p>Professional design</p><div class="price">₹499</div></div>
+    <div class="card"><h3>Cover Design</h3><p>YouTube & LinkedIn</p><div class="price">₹299</div></div>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center;font-size:2.4rem;color:var(--gold);margin-bottom:50px">Design Packages</h2>
+  <div class="cards">
+    <div class="card"><h3>Starter Pack</h3><p>3 Posts • 2 Stories</p><div class="price">₹799</div></div>
+    <div class="card"><h3>Business Pack</h3><p>6 Posts • 4 Stories</p><div class="price">₹1,499</div></div>
+    <div class="card"><h3>Premium Pack</h3><p>10 Posts • Priority</p><div class="price">₹2,499</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="contact-card">
+    <h2>Contact Information</h2>
+    <div class="contact-item">📞 9848064065</div>
+    <div class="contact-item">📧 adeepemmanuel5@gmail.com</div>
+  </div>
+</section>
+
+<a class="whatsapp-btn" href="https://wa.me/919848064065?text=Hi%20Adeep,%20I%20need%20a%20design" target="_blank">WhatsApp Me</a>
+
+<script>
+  const cards=document.querySelectorAll('.card');
+  const obs=new IntersectionObserver(e=>{
+    e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('show')})
+  },{threshold:.2});
+  cards.forEach(c=>obs.observe(c));
+
+  const wa=document.querySelector('.whatsapp-btn');
+  window.addEventListener('scroll',()=>{
+    window.scrollY>200?wa.classList.add('show'):wa.classList.remove('show')
+  });
+
+  document.addEventListener('mousemove',e=>{
+    document.querySelectorAll('.blob').forEach(b=>{
+      b.style.transform=`translate(${e.clientX/40}px,${e.clientY/40}px)`
+    })
+  });
+</script>
+
+</body>
+</html>
