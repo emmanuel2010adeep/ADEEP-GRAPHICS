@@ -1,0 +1,41 @@
+{
+  "brand": "Adeep Graphics",
+  "shortBrand": "AG",
+  "role": "Video Editor & Visual Storyteller",
+  "hero": {
+    "line1": "Frames that",
+    "accent1": "feel.",
+    "line2": "Stories that",
+    "accent2": "stay.",
+    "description": "I turn raw footage into high-retention short-form content, emotional wedding films, cinematic real-estate videos and engaging long-form stories."
+  },
+  "showreel": {
+    "title": "Short form. Built to stop the scroll.",
+    "description": "Your short-form showreel belongs at the center of the brand. Add your MP4 URL in this JSON when ready.",
+    "video": ""
+  },
+  "categories": [
+    {"title":"Short Form","description":"Reels / Shorts / Social Content","icon":"01"},
+    {"title":"Weddings","description":"Reels / Highlights / Films","icon":"02"},
+    {"title":"Real Estate","description":"Property Reels / Tours / Long Form","icon":"03"},
+    {"title":"Long Form","description":"YouTube / Events / Interviews / Stories","icon":"04"}
+  ],
+  "projects": [
+    {"type":"Wedding / Highlight","title":"Moments worth replaying.","description":"Emotional pacing, music, sound design and cinematic storytelling.","video":""},
+    {"type":"Real Estate","title":"Space. With feeling.","description":"Cinematic property presentation.","video":""},
+    {"type":"Short Form","title":"Made for the first second.","description":"Fast cuts, hooks, captions and motion.","video":""}
+  ],
+  "services": [
+    {"title":"Short-form editing","description":"Reels, Shorts and social content designed around attention and retention."},
+    {"title":"Wedding films","description":"Reels, highlights and long-form wedding stories built around emotion."},
+    {"title":"Real-estate video","description":"Cinematic property reels, tours and longer walkthrough edits."},
+    {"title":"Long-form editing","description":"YouTube, interviews, events and storytelling-focused content."}
+  ],
+  "tools": ["Premiere Pro", "After Effects", "DaVinci Resolve", "Photoshop", "Motion Graphics", "Sound Design"],
+  "contact": {
+    "email": "adeepemmanuel5@gmail.com",
+    "instagram": "",
+    "youtube": "",
+    "whatsapp": ""
+  }
+}
